@@ -12,4 +12,7 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url('./Juicy\ Tomato\ High\ Resolution\ Wallpaper\ \(1\).jpg');
+  background-size: 50%;
+  background-repeat: no-repeat
 }

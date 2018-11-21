@@ -25,7 +25,12 @@ class App extends Component {
   }
 
   sessionIncrement() {
-    if (this.state.sessionLength < 60) {
+    if (this.state.breakCounter && this.state.sessionLength < 60) {
+      this.setState({
+        sessionLength: this.state.sessionLength + 1
+      })
+    }
+    else if (this.state.sessionLength < 60 && !this.state.breakCounter) {
       this.setState({
         sessionLength: this.state.sessionLength + 1,
         sessionZ: this.state.sessionZ + 60
@@ -34,7 +39,12 @@ class App extends Component {
     
   }
   sessionDecrement() {
-    if (this.state.sessionLength > 1) {
+    if (this.state.breakCounter && this.state.sessionLength > 1) {
+      this.setState({
+        sessionLength: this.state.sessionLength - 1
+      })
+    }
+    if (this.state.sessionLength > 1 && !this.state.breakCounter) {
       this.setState({
         sessionLength: this.state.sessionLength - 1,
         sessionZ: this.state.sessionZ - 60
